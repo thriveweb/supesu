@@ -293,11 +293,12 @@ a{
 }
 
 #res-nav{
-  width: 0;
+  width: 400px;
+  right: -403px;
 }
 
 #res-nav.open{
-  width: 400px;
+    right: 0px;
 }
 
 @media screen and (max-width: 700px){
