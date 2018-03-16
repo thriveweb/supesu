@@ -1,13 +1,19 @@
 /*
+
 Theme Name: Supesu
 Text Domain: supesu
+Version: 1.0
+
 Author: Samantha Scott
 Author URI: http://thriveweb.com.au/
-Description: Minimal and clean Wordpress theme made for creatives. Easily customisable and visually stunning.
-Version: 1.0
-Tags: minimal, two-column, full-width, photography, clean, responsive
+Theme URI: https://thriveweb.com.au/the-lab/supesu-responsive-wordpress-5-theme/
 
-Copyright (C) 2018 Thrive Web Design
+Description: Minimal and clean Wordpress theme made for creatives. Easily customisable and visually stunning.
+Tags: two-columns, grid-layout, custom-colors, custom-menu, custom-logo, featured-images, theme-options, threaded-comments, blog, photography, portfolio
+
+Supesu WordPress Theme, Copyright (C) 2018 Thrive Web Design
+License: GNU General Public License
+License URI: licence.txt
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -23,6 +29,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
 
 /*---------------------------- normalize ----------------------------*/
 
@@ -59,11 +66,12 @@ img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 svg:not(:root) { overflow: hidden; }
 figure { margin: 0; }
 
+.sticky{ }
+
 form { margin: 0; }
 fieldset { border: 0; margin: 0; padding: 0; }
 label { cursor: pointer; }
 legend { border: 0; *margin-left: -7px; padding: 0; }
-
 
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
@@ -73,6 +81,36 @@ td { vertical-align: top; }
 body{
 	margin: 1rem 0 0;
 	background: white;
+}
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #eee;
+	clip: auto !important;
+	clip-path: none;
+	color: #444;
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+z-index: 100000;
 }
 
 /* ---------------------------- typography ---------------------------- */
@@ -180,23 +218,27 @@ a{
 	display: inline-block;
 }
 
-.left{
+.left,
+.alignleft{
 	margin-left: 4rem;
 	float: left;
 }
 
-.right{
+.right,
+.alignright{
 	margin-right: 4rem;
 	float: right;
 }
 
 
 @media screen and (max-width: 700px){
-	.left{
+	.left,
+	.alignleft{
 		margin-left: 2rem;
 	}
 
-	.right{
+	.right,
+	.alignright{
 		margin-right: 2rem;
 	}
 }
@@ -712,6 +754,38 @@ hr{
 		height: 500px;
 		display: block;
 	}
+}
+
+.content_wrap .wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%; /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+
+.content_wrap .wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto;
+}
+
+.content_wrap .wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px;
+}
+
+.content_wrap .gallery-caption{
+	background-color: transparent;
+}
+
+.bypostauthor{
+
 }
 
 /* ---------------------------- related posts ---------------------------- */

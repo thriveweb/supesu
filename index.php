@@ -19,6 +19,7 @@
 
 	<div id="post_nav">
 		<div class="contain">
+			<?php wp_link_pages(); ?>	
 			<?php next_posts_link('<div class="button next right">Older Posts</h6>'); ?>
 			<?php previous_posts_link('<div class="button prev left">Newer Posts</h6>'); ?>
 		</div>

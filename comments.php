@@ -14,13 +14,11 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 	<div class="comments content_wrap">
 		<h6 class="comments-title">
-			<!-- <?php
-				printf( _nx( '1 Comment', '%1$s Comments', get_comments_number(), 'comments title', 'twentyfifteen' ),
-					number_format_i18n( get_comments_number() ), get_the_title() );
-			?> -->
-
 			<?php comments_popup_link('1 comment.', '% comments already!'); ?>
 		</h6>
+
+		<?php next_comments_link() ?>
+		<?php previous_comments_link() ?>
 
 		<ol class="comment-list">
 			<?php

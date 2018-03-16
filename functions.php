@@ -39,54 +39,58 @@ function supesu_customizer_settings( $wp_customize ) {
 
 	$wp_customize->add_setting( 'heading_colour' , array(
 		'default' => '#000000',
+		'sanitize_callback' => 'sanitize_hex_color',
 		'transport' => 'refresh',
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'heading_colour', array(
-	'section' => 'site_colours',
-	'settings' => 'heading_colour',
-	'label' => 'Heading Colour',
+		'section' => 'site_colours',
+		'settings' => 'heading_colour',
+		'label' => 'Heading Colour',
 	) ) );
 
 	// subheading colour
 
 	$wp_customize->add_setting( 'subheading_colour' , array(
 		'default' => '#000000',
+		'sanitize_callback' => 'sanitize_hex_color',
 		'transport' => 'refresh',
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'subheading_colour', array(
-	'section' => 'site_colours',
-	'settings' => 'subheading_colour',
-	'label' => 'Subheading Colour',
+		'section' => 'site_colours',
+		'settings' => 'subheading_colour',
+		'label' => 'Subheading Colour',
 	) ) );
 
 	// link colour
 
 	$wp_customize->add_setting( 'link_colour' , array(
 		'default' => '#000000',
+		'sanitize_callback' => 'sanitize_hex_color',
 		'transport' => 'refresh',
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_colour', array(
-	'section' => 'site_colours',
-	'settings' => 'link_colour',
-	'label' => 'Link Colour',
+		'section' => 'site_colours',
+		'settings' => 'link_colour',
+		'label' => 'Link Colour',
 	) ) );
 
 	// button colour
 
 	$wp_customize->add_setting( 'button_colour' , array(
     'default' => '#000000',
+		'sanitize_callback' => 'sanitize_hex_color',
     'transport' => 'refresh',
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'button_colour', array(
-	'section' => 'site_colours',
-	'settings' => 'button_colour',
-	'label' => 'Button Colour',
+		'section' => 'site_colours',
+		'settings' => 'button_colour',
+		'label' => 'Button Colour',
 	) ) );
 
 	// social icons
 
   $wp_customize->add_section( 'social_settings', array(
-      'title' => __( 'Social Media', 'theme_slug' ),
+      'title' => __( 'Social Media'),
       'priority' => 60,
   ));
 
@@ -215,6 +219,30 @@ function supesu_customizer_css()
 		</style>
 	<?php
 }
+
+// theme support
+
+add_action( 'after_setup_theme', 'supesu_functions' );
+function supesu_functions() {
+
+    add_theme_support( 'title-tag' );
+
+		add_theme_support( 'automatic-feed-links' );
+
+		add_theme_support( 'custom-background' );
+
+		add_theme_support( 'post-thumbnails' );
+
+}
+
+// comment reply
+
+if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+
+// content width
+
+if ( ! isset( $content_width ) )
+	$content_width = 860;
 
 // rearrange comment fields
 
