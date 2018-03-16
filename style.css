@@ -124,9 +124,7 @@ h6,
 ul,
 ol,
 blockquote,
-p,
-a,
-a:hover{
+p{
 	font-family: 'Barlow' !important;
 	line-height: 150%;
 	margin: 0;
