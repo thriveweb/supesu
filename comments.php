@@ -1,12 +1,13 @@
 <?php
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
+/**
+ * Template to display theme comments.
+ *
+ * @link https://thriveweb.com.au/the-lab/supesu-responsive-wordpress-5-theme/
+ *
+ * @package Supesu Theme
+ * @version 1.0.7
  */
-if ( post_password_required() ) {
-	return;
-}
+
 ?>
 
 <div id="comments" class="comments-area">
@@ -14,7 +15,7 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 	<div class="comments content_wrap">
 		<h6 class="comments-title">
-			<?php comments_popup_link('1 comment.', '% comments already!'); ?>
+			<?php comments_popup_link( '% comments already!' ); ?>
 		</h6>
 
 		<?php next_comments_link() ?>

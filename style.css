@@ -2,7 +2,7 @@
 
 Theme Name: Supesu
 Text Domain: supesu
-Version: 1.0
+Version: 1.0.7
 
 Author: Samantha Scott
 Author URI: http://thriveweb.com.au/
@@ -228,10 +228,9 @@ a{
 	float: right;
 }
 
-.align-center{
-	
-}
+.aligncenter{
 
+}
 
 @media screen and (max-width: 700px){
 	.left,
@@ -245,25 +244,12 @@ a{
 	}
 }
 
-/* ---------------------------- edit ---------------------------- */
-
-.edit_link{
-	border: 1px solid;
-	width: 15rem;
-	margin: 3rem auto 0;
-	text-align: center;
+.cover img{
+	width: 100%;
 }
 
-.edit_link:hover{
-	border: 1px solid;
-	background: #000;
-	color: #fff !important;
-	cursor: pointer;
-}
-
-.edit_link:hover a,
-.edit_link:hover p{
-	color: #fff;
+.cover img{
+	object-fit: cover !important;
 }
 
 /* ---------------------------- header & logo ---------------------------- */
@@ -390,17 +376,17 @@ a{
 	}
 }
 
-.overlay-content ul li.menu-item{
+.overlay-content ul li{
 	padding: 2rem 0;
 }
 
 @media screen and (max-width: 500px){
-	.overlay-content ul li.menu-item{
+	.overlay-content ul li{
 		padding: 1rem 0;
 	}
 }
 
-.overlay-content ul li.menu-item a{
+.overlay-content ul li a{
 	font-size: 18px;
   color: #000;
   text-transform: uppercase;
@@ -410,12 +396,12 @@ a{
 }
 
 @media screen and (max-width: 500px){
-	.overlay-content ul li.menu-item a{
+	.overlay-content ul li a{
 		font-size: 16px;
 	}
 }
 
-.overlay-content ul li.menu-item a:hover,
+.overlay-content ul li a:hover,
 .overlay-content ul li.current_page_item a{
   font-weight: 800;
 }
@@ -442,18 +428,20 @@ a{
 /* ---------------------------- post preview ---------------------------- */
 
 article,
-.post_info{
+.post-info{
 	position: relative;
 }
 
 #wrap article,
-#wrap .post_info{
+#wrap article .cover,
+#wrap article .cover img,
+#wrap .post-info{
 	height: 40rem;
 }
 
 @media screen and (max-width: 900px){
 	#wrap article,
-	#wrap .post_info{
+	#wrap .post-info{
 		height: 30rem;
 	}
 }
@@ -495,7 +483,7 @@ article,
 	width: 100% !important;
 }
 
-.post_info{
+.post-info{
 	width: 100%;
 	color: #fff !important;
 	align-items: center;
@@ -504,49 +492,46 @@ article,
 	background: rgba(0,0,0, 0.4);
 }
 
-.post_info .wrap{
+.post-info .wrap{
 	width: 70%;
 	margin: auto;
 	text-align: center;
 }
 
-.post_info .wrap h6,
-.post_info .wrap h4.alt{
+.post-info .wrap h6,
+.post-info .wrap h4.alt{
 	color: #fff !important;
 }
 
-.post_info .wrap p{
+.post-info .wrap p{
 	font-size: 1rem;
 	color: #fff !important;
 }
 
-.post_info .wrap a.more:after{
+.post-info .wrap a.more:after{
 	content: '\f105';
 	font-family: FontAwesome;
 	margin: 0 0 0 10px;
 }
 
-#blog_head,
+#blog-head{
+	display: block;
+}
+
+#blog-head .cover,
+#blog-head .cover img,
 .title{
 	height: 40rem;
 	display: block;
 }
 
 @media screen and (max-width: 800px){
-	#blog_head,
+	#blog-head .cover,
+	#blog-head .cover img,
 	.title{
 		height: 25rem;
 		display: block;
 	}
-}
-
-#blog_head{
-	display: block;
-}
-
-#blog_head{
-	background-position: center !important;
-	background-size: cover !important;
 }
 
 .title{
@@ -590,6 +575,13 @@ article,
 	.share .content_wrap{
 		padding: 0 4rem;
 	}
+}
+
+.content_wrap ul,
+.content_wrap ol{
+	font-size: 0.9rem;
+	margin-left: 1.5rem;
+	line-height: 1.5rem;
 }
 
 /* ---------------------------- gutenburg ---------------------------- */
@@ -667,6 +659,7 @@ blockquote p{
 	border: 1px solid;
 	border-radius: 0;
 	background: transparent;
+	font-family: "Barlow";
 	color: #000;
 	padding: 0.3rem 1.2rem;
 	letter-spacing: 0.5px;
@@ -721,6 +714,11 @@ hr{
 .content_wrap .wp-block-image,
 .content_wrap .wp-block-gallery{
 	margin: 2rem 0;
+}
+
+.content_wrap .wp-block-image img,
+.content_wrap .wp-block-gallery img{
+	width: 100%;
 }
 
 .content_wrap .wp-block-gallery,
@@ -793,7 +791,7 @@ hr{
 /* ---------------------------- related posts ---------------------------- */
 
 #related article,
-#related .post_info{
+#related .post-info{
 	height: 25rem;
 }
 
@@ -814,7 +812,7 @@ hr{
 
 @media screen and (max-width: 750px){
 	#related article,
-	#related .post_info{
+	#related .post-info{
 		height: 15rem;
 	}
 
